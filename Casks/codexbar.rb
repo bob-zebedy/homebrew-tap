@@ -1,6 +1,6 @@
 cask "codexbar" do
-  version "3.6.4"
-  sha256 "1ed190a3e6dc627e4326830b32941da6d131f7882f84ed3fc098dfebbe0190cb"
+  version "3.6.6"
+  sha256 "692744e26318a099625a4dbb5c2012ec4a1e5858f474842b21b0f48aab3255a5"
 
   url "https://codexbar.zabrian.app/download/CodexBar-v#{version}.dmg",
       verified: "codexbar.zabrian.app/"
