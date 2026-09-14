@@ -2,8 +2,7 @@ cask "codexbar" do
   version "4.0.0"
   sha256 "04ceced5495a1e54822490a5e22f060156d7239e3a51c25245e4f1956ed24521"
 
-  url "https://codexbar.zabrian.app/download/CodexBar-v#{version}.dmg",
-      verified: "codexbar.zabrian.app/"
+  url "https://codexbar.zabrian.app/download/CodexBar-v#{version}.dmg"
   name "CodexBar"
   desc "Menu bar dashboard for Codex account status, quota, and usage"
   homepage "https://github.com/bob-zebedy/CodexBar"
