@@ -9,10 +9,13 @@ cask "codexbar" do
 
   livecheck do
     url "https://codexbar.zabrian.app/appcast.xml"
-    strategy :sparkle, &:short_version
+    strategy :sparkle do |items|
+      items.filter_map(&:short_version).select { |version| version.start_with?("4.") }
+    end
   end
 
   auto_updates true
+  conflicts_with cask: "bob-zebedy/tap/codexbar@5"
   depends_on macos: :sequoia
 
   app "CodexBar.app"
@@ -20,8 +23,10 @@ cask "codexbar" do
   uninstall quit: "app.zabrian.codexbar"
 
   zap trash: [
+    "~/Library/Application Support/CodexBar",
     "~/Library/Caches/app.zabrian.codexbar",
     "~/Library/HTTPStorages/app.zabrian.codexbar",
+    "~/Library/HTTPStorages/app.zabrian.codexbar.binarycookies",
     "~/Library/Preferences/app.zabrian.codexbar.plist",
     "~/Library/Saved Application State/app.zabrian.codexbar.savedState",
   ]
